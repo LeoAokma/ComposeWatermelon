@@ -1,5 +1,5 @@
-# CutWatermelon
-这是一个unity 复刻“合成大西瓜”小游戏的项目
+# ComposeWatermelon
+这是一个unity 复刻“合成大西瓜”小游戏的项目,主要寒假学着玩一玩，蛮有意思的。现在主要实现了碰撞检测与合并、记分的功能，看有没有时间在深入学习了，（逃
 
 ![1611639917475](1611639917475.png)
 
@@ -21,3 +21,4 @@ git clone git@github.com:centauruszzz/ComposeWatermelon
 
 添加融合的动画和音效，使得视觉和听觉效果更加丝滑。
 
+再好好写一写注释
