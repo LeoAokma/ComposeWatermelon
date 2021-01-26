@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using NUnit.Framework;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
@@ -7,10 +10,9 @@ using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
-    public Transform transform;
-    private ArrayList CurrentArray = new ArrayList();
+    public static Dictionary<int,int> current = new Dictionary<int,int>();
     private Vector2 originPosition = new Vector2(0, 10);
-    private int score = 0;
+    public static int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -43,4 +45,30 @@ public class GameController : MonoBehaviour
             //CurrentArray.Add(tempObject);
         }
     }
+
+    public static void setCurrent(GameObject a,GameObject b,int mark)
+    {
+        int key = Mathf.Max(a.GetHashCode(), b.GetHashCode());
+        int value = Mathf.Min(a.GetHashCode(), b.GetHashCode());
+        if (current.ContainsKey(key) && current[key] == value)
+        {
+            //已经进行了合并
+            current.Remove(key);
+        }
+        else
+        {
+            current.Add(key,value);
+            GameObject newPrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/" + (mark + 1).ToString() + ".prefab",typeof(GameObject)) as GameObject;
+            float newx = (a.transform.position.x + b.transform.position.x) / 2;
+            float newy = (a.transform.position.y + b.transform.position.y) / 2;
+            Destroy(a.gameObject);
+            Destroy(b.gameObject);
+            GameObject newObject = Instantiate(newPrefab,
+                new Vector2(newx,newy)
+                ,quaternion.identity);
+            newObject.AddComponent<ComponentController>();
+            newObject.GetComponent<ComponentController>().Mark = mark+1;
+        }
+    }
+    
 }

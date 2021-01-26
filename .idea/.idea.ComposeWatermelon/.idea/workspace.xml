@@ -16,8 +16,8 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ComponentController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nYFQpFROLedwgMV1qU0ypcmbtT" />
@@ -62,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611559122679</updated>
       <workItem from="1611559167966" duration="19120000" />
-      <workItem from="1611619914424" duration="5390000" />
+      <workItem from="1611619914424" duration="10365000" />
     </task>
     <servers />
   </component>
@@ -70,24 +70,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/ComponentController.cs</url>
-          <line>35</line>
-          <properties documentPath="D:\Program Files\新建文件夹\workspace\ComposeWatermelon\Assets\Scripts\ComponentController.cs" initialLine="30" containingFunctionPresentation="method 'OnCollisionEnter2D'">
-            <startOffsets>
-              <option value="688" />
-            </startOffsets>
-            <endOffsets>
-              <option value="712" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
