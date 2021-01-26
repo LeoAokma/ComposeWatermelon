@@ -11,38 +11,46 @@ using Random = UnityEngine.Random;
 public class GameController : MonoBehaviour
 {
     public static Dictionary<int,int> current = new Dictionary<int,int>();
-    private Vector2 originPosition = new Vector2(0, 10);
     public static int score = 0;
+    private Vector2 originPosition = new Vector2(0, 10);
+    private GameObject tempObject;
+    private int label;
+    private bool control = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        label = Mathf.RoundToInt(Random.Range(1f, 5f));
+        GameObject prefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/" + label.ToString() + ".prefab",typeof(GameObject)) as GameObject;
+        tempObject = Instantiate(prefab,new Vector2(0,10),quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     float inx = Input.mousePosition.x;
-        //     float iny = Input.mousePosition.y;
-        //     
-        // }
+        float inx = Input.mousePosition.x;
         if (Input.GetMouseButtonUp(0))
         {
-            float inx = Input.mousePosition.x;
-            float iny = Input.mousePosition.y;
-            originPosition = new Vector2((inx-540) / 100, 10);
-            Debug.Log(originPosition);
-            int label = Mathf.RoundToInt(Random.Range(1f, 5f));
+            control = false;
+            //Debug.Log(originPosition);
+            label = Mathf.RoundToInt(Random.Range(1f, 5f));
             GameObject prefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/" + label.ToString() + ".prefab",typeof(GameObject)) as GameObject;
-            GameObject tempObject = Instantiate(prefab,originPosition,quaternion.identity);
-            //tempObject.transform.SetParent(transform);
+            tempObject = Instantiate(prefab,originPosition,quaternion.identity);
+        }
+        if (control)
+        {
+            tempObject.transform.position = new Vector2((inx-540) / 100, 10);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            control = true;
+            inx = Input.mousePosition.x;
+            float iny = Input.mousePosition.y;
+            tempObject.AddComponent<Rigidbody2D>();
             tempObject.AddComponent<ComponentController>();
             tempObject.GetComponent<ComponentController>().Mark=label;
+            tempObject.AddComponent<CircleCollider2D>();
             //position是绝对坐标，localposition是相对父节点的坐标
-            //CurrentArray.Add(tempObject);
         }
     }
 
@@ -68,6 +76,8 @@ public class GameController : MonoBehaviour
                 ,quaternion.identity);
             newObject.AddComponent<ComponentController>();
             newObject.GetComponent<ComponentController>().Mark = mark+1;
+            newObject.AddComponent<CircleCollider2D>();
+            newObject.AddComponent<Rigidbody2D>();
         }
     }
     
