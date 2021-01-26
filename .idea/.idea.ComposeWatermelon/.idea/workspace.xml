@@ -16,8 +16,8 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ComponentController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ComponentController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nYFQpFROLedwgMV1qU0ypcmbtT" />
@@ -43,10 +43,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19372">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="19372" />
+      <option name="pid" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -62,7 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1611559122679</updated>
       <workItem from="1611559167966" duration="19120000" />
-      <workItem from="1611619914424" duration="16531000" />
+      <workItem from="1611619914424" duration="17274000" />
+      <workItem from="1611648148077" duration="1112000" />
     </task>
     <servers />
   </component>

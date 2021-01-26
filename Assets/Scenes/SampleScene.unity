@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 105156434}
   m_Layer: 0
   m_Name: RightWall
-  m_TagString: Untagged
+  m_TagString: Obtacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 176669998}
   m_Layer: 0
   m_Name: Plain
-  m_TagString: Untagged
+  m_TagString: Obtacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,7 +453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5042ef01523137409032c9012837cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transform: {fileID: 1726207302}
 --- !u!4 &577407391
 Transform:
   m_ObjectHideFlags: 0
@@ -481,7 +480,7 @@ GameObject:
   - component: {fileID: 1072077027}
   m_Layer: 0
   m_Name: LeftWall
-  m_TagString: Untagged
+  m_TagString: Obtacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -622,7 +621,7 @@ GameObject:
   - component: {fileID: 1595581298}
   - component: {fileID: 1595581297}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

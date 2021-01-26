@@ -14,6 +14,8 @@ git clone git@github.com:centauruszzz/ComposeWatermelon
 使用unity打开项目
 
 * 主要资源位于Assets文件夹下，包括精灵图、脚本、预制件、舞台、材质（现在还没有）
+* 代码可以点[这里](https://github.com/centauruszzz/ComposeWatermelon/tree/main/Assets/Scripts)
+* Unity官方开发者文档点[这里](https://docs.unity.cn/cn/2020.2/Manual/UnityManual.html)
 
 ## 改进方向
 
