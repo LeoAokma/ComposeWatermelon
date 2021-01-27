@@ -1,7 +1,4 @@
-using Unity.Mathematics;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
 
 //这是挂载在每一个实例化的小西瓜上的脚本

@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using NUnit.Framework;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
@@ -13,12 +9,12 @@ public class GameController : MonoBehaviour
 {
     public static Dictionary<int, int> current = new Dictionary<int, int>(); //存储需要合并的小西瓜的字典
     public static int score = 0; //得分
-    private List<GameObject> prefabList = new List<GameObject>(); //预制体的链表，我们在创建场景时把她们加载到内存里
+    private static List<GameObject> prefabList = new List<GameObject>(); //预制体的链表，我们在创建场景时把她们加载到内存里
     private Vector2 originPosition = new Vector2(0, 10); //每次小西瓜的初始位置（正中上）
     private GameObject tempObject; //每次需要实例化的小西瓜
     private int label; //小西瓜的编号，这里随机产生，在Assets/Sprites文件夹中有这五个小西瓜
     private bool control = false; //这是判断是否处于鼠标按下但没有松开的状态，此时可以自由水平移动小西瓜
-    private int minW = 0, maxW = 5;
+    private int minW = 0, maxW = 5;//这是小西瓜的编号取值范围
 
 
     private void Awake()
@@ -37,7 +33,7 @@ public class GameController : MonoBehaviour
     {
         //初始时先实例化一个Prefab
         label = Mathf.RoundToInt(Random.Range(minW, maxW));
-        tempObject = Instantiate(prefabList[label], new Vector2(0, 10), quaternion.identity);
+        tempObject = Instantiate(prefabList[label], originPosition, quaternion.identity);
     }
 
     // Update is called once per frame
@@ -87,14 +83,11 @@ public class GameController : MonoBehaviour
         else
         {
             current.Add(key, value);
-            GameObject newPrefab =
-                AssetDatabase.LoadAssetAtPath("Assets/Prefabs/" + (mark + 1).ToString() + ".prefab", typeof(GameObject))
-                    as GameObject;
             float newx = (a.transform.position.x + b.transform.position.x) / 2;
             float newy = (a.transform.position.y + b.transform.position.y) / 2;
             Destroy(a.gameObject);
             Destroy(b.gameObject);
-            GameObject newObject = Instantiate(newPrefab,
+            GameObject newObject = Instantiate(prefabList[mark+1],
                 new Vector2(newx, newy)
                 , quaternion.identity);
             newObject.AddComponent<ComponentController>();
