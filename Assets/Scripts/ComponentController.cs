@@ -40,14 +40,14 @@ public class ComponentController : MonoBehaviour
         //如果两个小西瓜编号相同，那么就可以合并
         if ( colliderMark==mark)
         {
-            //这里我只切了5张图，所以上限就是5了，编号是5的两个西瓜不能合并了
-            if (colliderMark==5)
+            //这里我只切了5张图，所以上限就是4了，编号是4的两个西瓜不能合并了
+            if (colliderMark==4)
             {
                 return;
             }
             GameController.setCurrent(this.gameObject,collider.gameObject,mark);//通知主函数进行合并
             GameController.score += mark * 2;//分数就可以采用一定规则累计了
-            GameObject.Find("Score").GetComponent<Text>().text = "Score" +GameController.score.ToString();
+            GameObject.Find("Score").GetComponent<Text>().text = "Score: " +GameController.score.ToString();
         }
     }
     
